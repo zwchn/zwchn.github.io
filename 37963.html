@@ -1,0 +1,1727 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="如何使用 Git 和 GitHub 来管理自己的代码, 三月天博客,三月天,sanyuetian,互联网技术分享">
+    <meta name="description" content="一、注册 GitHub 账号1. GitHub 官方网站：github.com/2. 注册并登录 GitHub 账号3. 创建存储仓库&amp;nbsp; &amp;nbsp; 点击右上角加号箭头，在弹出的菜单中选择 &#34;New repository&#34; 选项">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>如何使用 Git 和 GitHub 来管理自己的代码 | 三月天博客 | Sanyuetian`s Blog</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/css/my.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="三月天博客 | Sanyuetian`s Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">三月天博客 | Sanyuetian`s Blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">三月天博客 | Sanyuetian`s Blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">如何使用 Git 和 GitHub 来管理自己的代码</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git%E5%AE%89%E8%A3%85-git%E7%AE%A1%E7%90%86github%E4%BB%A3%E7%A0%81-github-git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81/">
+                                <span class="chip bg-color">git安装,git管理github代码,github,git上传代码</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/" class="post-category">
+                                技术文档
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-06-26
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-06-26
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    9 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div><div><blockquote><p><img src="https://www.zwblog.cn/zb_users/upload/2018/08/201808181534574052589303.jpg" title="u=934220340,2969578747&amp;fm=27&amp;gp=0.jpg" alt="u=934220340,2969578747&amp;fm=27&amp;gp=0.jpg"></p><p>一、注册 GitHub 账号</p></blockquote><p>1. GitHub 官方网站：<a href="https://link.jianshu.com?t=https://github.com/" target="_blank" rel="nofollow">github.com/</a></p><p>2. 注册并登录 GitHub 账号</p><p>3. 创建存储仓库</p><p>&nbsp; &nbsp; 点击右上角加号箭头，在弹出的菜单中选择 "New repository" 选项进行仓库配置。</p><div><div><div></div><div data-width="277" data-height="315"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-c3e2ed8ac8b150f1.png" data-original-width="277" data-original-height="315" data-original-format="image/png" data-original-filesize="18140" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-c3e2ed8ac8b150f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/277"></div></div><div>创建存储仓库</div></div><p>&nbsp; &nbsp; 1&gt; Repository name：存储库名称</p><p>&nbsp; &nbsp; 2&gt; Description：对此仓库的描述</p><p>&nbsp; &nbsp; 3&gt; 自由选择：Public（公共）或Private（私人）仓库</p><p>&nbsp; &nbsp; 4&gt; 自由选择：是否勾选 "Initialize this repository with a README"</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;备注：1. 如果是新创建的仓库可以选择勾选</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2. 如果要导入现有存储库可以选择不勾选</p><p>&nbsp; &nbsp; 点击 "Create repository" 按钮进行仓库创建。</p><div><div><div></div><div data-width="746" data-height="601"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-34f5c93a77c402c6.png" data-original-width="746" data-original-height="601" data-original-format="image/png" data-original-filesize="51942" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-34f5c93a77c402c6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700"></div></div><div>配置存储仓库</div></div><p>4. 若选择了 "README" 选项，那么在创建仓库成功后可以点击 "README.md" 文件来修改并编译此文件。</p><div><div><div></div><div data-width="1011" data-height="577"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-f81b8fd48383745b.png" data-original-width="1011" data-original-height="577" data-original-format="image/png" data-original-filesize="52483" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-f81b8fd48383745b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700"></div></div><div>创建仓库成功</div></div><blockquote><p>二、在windows下安装Git工具</p></blockquote><p>1. 下载地址：<a href="https://link.jianshu.com?t=https://git-scm.com/" target="_blank" rel="nofollow">git-scm.com/</a></p><p>2. 下载完毕后点击 "Next" 进行安装</p><div><div><div></div><div data-width="499" data-height="381"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-08549b564b02c391.png" data-original-width="499" data-original-height="381" data-original-format="image/png" data-original-filesize="27730" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-08549b564b02c391.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/499"></div></div><div>Information</div></div><div><div><div></div><div data-width="498" data-height="382"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-a3ab8cc37e85991e.png" data-original-width="498" data-original-height="382" data-original-format="image/png" data-original-filesize="22247" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-a3ab8cc37e85991e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498"></div></div><div>Select Destination Location</div></div><div><div><div></div><div data-width="497" data-height="381"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-62bc65a3d5de4362.png" data-original-width="497" data-original-height="381" data-original-format="image/png" data-original-filesize="25645" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-62bc65a3d5de4362.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/497"></div></div><div>Select Components</div></div><div><div><div></div><div data-width="498" data-height="381"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-ecc5fc0e1f389542.png" data-original-width="498" data-original-height="381" data-original-format="image/png" data-original-filesize="22433" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-ecc5fc0e1f389542.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498"></div></div><div>Select Start Menu Folder</div></div><div><div><div></div><div data-width="498" data-height="382"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-d9d963e948f95483.png" data-original-width="498" data-original-height="382" data-original-format="image/png" data-original-filesize="31183" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-d9d963e948f95483.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498"></div></div><div>Adjusting your PATH environment</div></div><div><div><div></div><div data-width="501" data-height="384"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-7e156ea67a6e7207.png" data-original-width="501" data-original-height="384" data-original-format="image/png" data-original-filesize="30313" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-7e156ea67a6e7207.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/501"></div></div><div>Configuring extra options</div></div><p><br></p><div><div><div></div><div data-width="497" data-height="383"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-12d4fbfa6d50afe5.png" data-original-width="497" data-original-height="383" data-original-format="image/png" data-original-filesize="31186" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-12d4fbfa6d50afe5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/497"></div></div><div></div></div><div><div><div></div><div data-width="498" data-height="382"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-3b21cc6f85ce8942.png" data-original-width="498" data-original-height="382" data-original-format="image/png" data-original-filesize="17935" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-3b21cc6f85ce8942.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/498"></div></div><div>Configuring experimental options</div></div><div><div><div></div><div data-width="500" data-height="383"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-fb61fd9a54959c12.png" data-original-width="500" data-original-height="383" data-original-format="image/png" data-original-filesize="19356" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-fb61fd9a54959c12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500"></div></div><div>Completing the Git Setup Wizard</div></div><p>1）至选择安装组件(一般情况下默认选择即可)：</p><p>-Additional icons:其他图标</p><p>On the Desktop:选择是否创建桌面快捷方式</p><p>-Windows Explorer integration:Windows资源管理器集成</p><p>Git Bash Here:使用Bash浏览源码</p><p>Git GUI Here:使用GUI浏览源码</p><p>-Associate .git* configuration files with the default text editor:是否关联git配置文件,该配置文件主要显示文本编辑器的样式</p><p>-Associate .sh files to be run with Bash:是否关联Bash命令行执行的shell脚本文件</p><p>-Use a TrueType font in all console windows:在命令行中是否使用TruthType编码,该编码是微软和苹果公司制定的通用编码</p><p>2）至设置环境变量(一般情况下默认选择Git Bash即可)：</p><p>-Use Git from Git Bash only:使用Git自带的Git Bash命令行工具</p><p>-Use Git form the Windows Command Prompt:使用Windows系统的cmd命令行工具</p><p>-Use Git and optional Unix tools from the Windows Command Prompt:上面二者同时配置,但是注意这样会将windows中的find.exe和sort.exe工具覆盖,如果不懂这些尽量不要选择</p><p>3）选择换行格式：</p><p>-Checkout Windows-style,commit Unix-style line endings:(Windows系统安装选择)检查换行格式将windows格式的换行转换为unix格式的换行在进行提交</p><p>-Checkout as-is,commit Unix-style line endings:(Unix系统安装选择)检查换行格式将原来不管什么格式的换行一律转换为unix格式的换行在进行提交</p><p>-Checkout as-is,commit as-is:(非跨平台项目安装选择)不进行格式转换,检查出什么格式就提交什么格式</p><blockquote><p>三、配置Git环境</p></blockquote><p>1. 点击 "Git Bash" 打开 Git 命令控制台</p><div><div><div></div><div data-width="494" data-height="180"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-fc57813c42aeca08.png" data-original-width="494" data-original-height="180" data-original-format="image/png" data-original-filesize="9258" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-fc57813c42aeca08.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/494"></div></div><div>Git Bash 命令控制台</div></div><p>2. 生成秘钥文件来连接 GitHub，在控制台输入如下指令并连续敲 3 次回车即可</p><p>&nbsp; &nbsp; $ ssh-keygen -t rsa -C "myMailbox@163.com"</p><p>&nbsp; &nbsp; 备注："myMailbox@163.com" 是你的邮箱地址，需要注意的是 "ssh-keygen" 之间是没有空格的，其他的之间是有空格的。</p><div><div><div></div><div data-width="589" data-height="333"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-04a68922c9fe4a97.png" data-original-width="589" data-original-height="333" data-original-format="image/png" data-original-filesize="28947" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-04a68922c9fe4a97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/589"></div></div><div>生成秘钥文件</div></div><p>3. 秘钥生成后可以在 "C:\Users\Administrator\.ssh" 文件夹下找到秘钥文件 "id_rsa.pub"</p><div><div><div></div><div data-width="388" data-height="182"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-12f3b617917b00e3.png" data-original-width="388" data-original-height="182" data-original-format="image/png" data-original-filesize="14146" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-12f3b617917b00e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/388"></div></div><div></div></div><p>4. 在登录的 GitHub 账户中配置 "SSH keys"，点击用户头像指示的三角图标选择 "Settings"，然后选择 "SSH and GPG keys"，点击右侧 "SSH keys" 栏中的 "New SSH key" 按钮进行配置（其中 Title 可以自己随意起一个名字，而 Key 的内容就是将 "id_rsa.pub" 文件中的内容全部复制过来即可），点击 "Add SSH key" 按钮完成操作，此时在你填写的邮箱中会收到一封确认的邮件可以不用管它。</p><div><div><div></div><div data-width="232" data-height="366"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-8f21b5370013145b.png" data-original-width="232" data-original-height="366" data-original-format="image/png" data-original-filesize="20060" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-8f21b5370013145b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/232"></div></div><div>选择 "Settings" 选项</div></div><div><div><div></div><div data-width="999" data-height="547"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-edf9ef250e1ce188.png" data-original-width="999" data-original-height="547" data-original-format="image/png" data-original-filesize="75252" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-edf9ef250e1ce188.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700"></div></div><div>"SSH keys" 配置</div></div><div><div><div></div><div data-width="746" data-height="223"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-d3cd185540cf3dcb.png" data-original-width="746" data-original-height="223" data-original-format="image/png" data-original-filesize="25386" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-d3cd185540cf3dcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700"></div></div><div>SSH 秘钥列表</div></div><p>5. 验证 Git 环境是否配置成功</p><p>&nbsp; &nbsp; $ ssh -T git@github.com</p><p>&nbsp; &nbsp; 备注：1. 当提示输入（yes/no）? 时，在后面输入 yes 回车即可，如果看到欢迎语 "Hi xxx! You've successfully authenticated, but GitHub does not provide shell access" 则表示配置成功。</p><p>&nbsp; &nbsp; 2. 如果提示类似 "ssh: Could not resolve hostname \342\200\223t: Name or service not known" 的错误，解决办法是执行命令：ssh -t -p 22 git@github.com（其中 -p 表示修改服务器端口为22）。</p><div><div><div></div><div data-width="590" data-height="170"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-553a2cb2d7642615.png" data-original-width="590" data-original-height="170" data-original-format="image/png" data-original-filesize="20562" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-553a2cb2d7642615.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>GIt 环境配置成功</div></div><p>6. 配置身份标识用户名和密码</p><p>&nbsp; &nbsp; $ git config --global user.name "userName"</p><p>&nbsp; &nbsp; $ git config --global user.email "myMailbox@163.com"</p><p>&nbsp; &nbsp; 备注："userName" 和 "myMailbox@163.com" 分别是你自己的用户名和邮箱。</p><div><div><div></div><div data-width="590" data-height="118"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-9a5cf81a576126dc.png" data-original-width="590" data-original-height="118" data-original-format="image/png" data-original-filesize="13192" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-9a5cf81a576126dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>配置用户名和密码</div></div><blockquote><p>四. 创建本地管理仓库</p></blockquote><p>1. 在自己的 Windows 下面选一盘符用来创建 Git 本地仓库</p><p>&nbsp; &nbsp; 1&gt; 本地创建：可以在任意盘符中创建一个目录文件夹</p><p>&nbsp; &nbsp; 2&gt; 命令创建：执行下面两句命令后就会自动在电脑 E 盘创建一个 "myGitHub" 的目录文件夹</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$ cd /e</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;$ mkdir myGitHub</p><div><div><div></div><div data-width="391" data-height="213"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-42e7e02da2633fdc.png" data-original-width="391" data-original-height="213" data-original-format="image/png" data-original-filesize="18729" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-42e7e02da2633fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/391"></div></div><div>创建 GIt 本地仓库</div></div><p>2. 选中创建的仓库目录右击鼠标，在弹出的菜单中选择 "Git Bash Here" 选项后就会在此目录中打开我们的 Git 命令控制台，进入到了本地仓库的根目录下。</p><div><div><div></div><div data-width="590" data-height="130"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-b59602b95e0eda35.png" data-original-width="590" data-original-height="130" data-original-format="image/png" data-original-filesize="9166" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-b59602b95e0eda35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>本地仓库根目录</div></div><p>3. 初始化 Git 仓库，操作完成后会在此目录中生成一个隐藏的 .git 后缀文件</p><p>&nbsp; &nbsp; $ git init</p><p>&nbsp; &nbsp; 备注：初始化必须进入到本地仓库的根目录下面。</p><div><div><div></div><div data-width="590" data-height="94"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-ca16a1c9053c7669.png" data-original-width="590" data-original-height="94" data-original-format="image/png" data-original-filesize="10448" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-ca16a1c9053c7669.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>初始化 Git 仓库</div></div><div><div><div></div><div data-width="390" data-height="160"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-640d01dceea53081.png" data-original-width="390" data-original-height="160" data-original-format="image/png" data-original-filesize="12834" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-640d01dceea53081.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390"></div></div><div>生成 .git 文件</div></div><p>4. 添加远程仓库管理</p><p>&nbsp; &nbsp; $ git remote add origin git@github.com:userName/hello-word.git</p><div><div><div></div><div data-width="590" data-height="84"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-05081a688d1683bf.png" data-original-width="590" data-original-height="84" data-original-format="image/png" data-original-filesize="10282" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-05081a688d1683bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>添加远程仓库管理</div></div><p>&nbsp; &nbsp; 备注：其中 "git@github.com:userName/hello-word.git" 是我们 GitHub 中 "hello-word" 项目的 ssh 地址，"userName" 是我们在 GitHub 网站上注册时使用的用户名，"hello-word.git" 是我们为这个项目建立的仓库名。</p><div><div><div></div><div data-width="294" data-height="48"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-e8d6b907ac2bb08b.png" data-original-width="294" data-original-height="48" data-original-format="image/png" data-original-filesize="3954" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-e8d6b907ac2bb08b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/294"></div></div><div>项目仓库地址</div></div><p>5. 如果在 GitHub 上创建仓库的时候将 "README" 选项选择了则就已经算是一次提交了，若需要在本地同步远程仓库的内容则使用如下命令即可</p><p>&nbsp; &nbsp; $ git pull git@github.com:userName/hello-word.git</p><p>&nbsp; &nbsp; 或者</p><p>&nbsp; &nbsp; $ git pull origin master<br></p><div><div><div></div><div data-width="590" data-height="155"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-fc03b15508e581a3.png" data-original-width="590" data-original-height="155" data-original-format="image/png" data-original-filesize="18176" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-fc03b15508e581a3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>同步远程仓库内容</div></div><p>&nbsp; &nbsp; 备注："userName" 是我们 GitHub 账号的用户名，"hello-word.git" 是我们为这个项目建立的仓库名，执行如上命令成功后在将会在本地仓库的根目录下生成从远程仓库同步下来的 "README.md" 文件。</p><div><div><div></div><div data-width="390" data-height="184"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-23aa141f83a88c5d.png" data-original-width="390" data-original-height="184" data-original-format="image/png" data-original-filesize="15034" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-23aa141f83a88c5d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/390"></div></div><div>同步远程仓库的 README.md 文件</div></div><blockquote><p>五、在本地仓库上传代码到远程仓库</p></blockquote><p>1. 将需要上传的文件放入本地仓库的根目录中</p><div><div><div></div><div data-width="389" data-height="200"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-0a0f06ae8ab54326.png" data-original-width="389" data-original-height="200" data-original-format="image/png" data-original-filesize="17224" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-0a0f06ae8ab54326.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/389"></div></div><div>需要上传的 hello-word.txt 文件</div></div><p>2. 添加当前更改或新增文件到本地 Git 仓库中</p><p>&nbsp; &nbsp; 1&gt; 添加指定文件</p><p>&nbsp; &nbsp; $ git add hello-word.txt</p><p>&nbsp; &nbsp; 备注：添加当前目录中的 "hello-word.txt" 文件到本地 Git 仓库中。</p><p>&nbsp; &nbsp; 1&gt; 添加全部文件<br></p><p>&nbsp; &nbsp; git add .</p><p>&nbsp; &nbsp; 备注："add" 后面加点意思就是将本仓库中的所有内容添加到本地仓库中。</p><div><div><div></div><div data-width="590" data-height="82"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-c4e108e8f005184c.png" data-original-width="590" data-original-height="82" data-original-format="image/png" data-original-filesize="8690" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-c4e108e8f005184c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>添加全部文件到本地仓库</div></div><p>3. 提交当前工作空间的修改内容</p><p>&nbsp; &nbsp; $ git commit -m "XXX"</p><p>&nbsp; &nbsp; 备注："XXX" 是提示信息，此提示信息是一定要写的，不仅是规则同时也方便我们记录此次操作的是什么内容。</p><div><div><div></div><div data-width="591" data-height="118"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-9118832353c7721a.png" data-original-width="591" data-original-height="118" data-original-format="image/png" data-original-filesize="13204" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-9118832353c7721a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/591"></div></div><div>提交修改内容</div></div><p>4. 推送本地仓库内容到远程仓库</p><p>&nbsp; &nbsp; $ git push git@github.com:userName/hello-word.git&nbsp;</p><p>&nbsp; &nbsp; 或者&nbsp;</p><p>&nbsp; &nbsp; $ git push -u origin master</p><p>&nbsp; &nbsp; 备注："userName" 是我们 GitHub 账号的用户名，"hello-word.git" 是我们为这个项目建立的仓库名。</p><div><div><div></div><div data-width="590" data-height="166"><img data-original-src="//upload-images.jianshu.io/upload_images/2910448-d19ed6a353bb6fe8.png" data-original-width="590" data-original-height="166" data-original-format="image/png" data-original-filesize="19458" class="" style="cursor: zoom-in;" src="//upload-images.jianshu.io/upload_images/2910448-d19ed6a353bb6fe8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/590"></div></div><div>推送本地内容到远程仓库</div></div><p>5. 如果出现 "non-fast-forward" 错误，主要是因为 GitHub 仓库中已经存在有一部分内容了，所以它不允许你直接把你的内容覆盖上去，比如有的人在新建仓库配置信息时将 "README" 文件选项打钩了可能就会出现这种情况，此时可以使用如下方法解决</p><p>&nbsp; &nbsp; $ git push --all -f</p><p>&nbsp; &nbsp; 备注：强推即利用覆盖方式将你本地的代码替代 GitHub 仓库内的内容</p><p>6. 至此上传文件就结束了，你可以到你的 GitHub 项目主页（https://github.com/userName/hello-word.git） 看到从本地仓库上传到 GitHub 远程仓库的文件了。</p><blockquote><p>六、Git常见功能管理<br></p></blockquote><p>1. 增加、修改或删除了新文件<br></p><p>&nbsp; &nbsp; $ git add .</p><p>&nbsp; &nbsp; $ git commit -m "XXX"</p><p>&nbsp; &nbsp; $ git push origin master</p><p>&nbsp; &nbsp; 或者</p><p>&nbsp; &nbsp; $ git push -u origin master</p><p>2. 从远程仓库克隆内容至本地仓库</p><p>&nbsp; &nbsp; $ git clone git@github.com:userName/hello-word.git</p><p>&nbsp; &nbsp; 备注："userName" 是我们 GitHub 账号的用户名，"hello-word.git" 是我们为这个项目建立的仓库名。</p><p>3. 假如本地仓库已经存在了代码而远程仓库里有更新，需要将更改的内容合并到本地的代码中</p><p>&nbsp; &nbsp; $ git fetch origin&nbsp; &nbsp;&nbsp;</p><p>&nbsp; &nbsp; 备注：获取远程更新。</p><p>&nbsp; &nbsp; $ git merge origin/master&nbsp;</p><p>&nbsp; &nbsp; 备注：将更新的内容合并到本地分支。</p></div><br><br>作者：w_陌上花开<br>链接：https://www.jianshu.com/p/7fa6b2d81f19<br>來源：简书<br>简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</div><p><br></p>
+
+<!--76-->
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">三月天</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://www.zwblog.cn/37963.html">https://www.zwblog.cn/37963.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">三月天</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/git%E5%AE%89%E8%A3%85-git%E7%AE%A1%E7%90%86github%E4%BB%A3%E7%A0%81-github-git%E4%B8%8A%E4%BC%A0%E4%BB%A3%E7%A0%81/">
+                                    <span class="chip bg-color">git安装,git管理github代码,github,git上传代码</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+	/*卡片式背景*/ 
+	#vcomments .vcards .vcard { 
+		padding: 15px 20px 0 20px; 
+		border-radius: 10px; 
+		margin-bottom: 15px; b
+		ox-shadow: 0 0 4px 1px rgba(0, 0, 0, .12); 
+		transition: all .3s 
+		}
+		#vcomments .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12) 
+		} 
+		#vcomments .vcards .vcard .vh .vcard { 
+		border: none; box-shadow: none; 
+		}
+	/*鼠标放置头像旋转*/
+	img.vimg { 
+		/* 旋转时间为 1s */ 
+		transition: all 1s 
+	} 
+	img.vimg:hover {
+		transform: rotate(360deg); 
+		-webkit-transform: rotate(360deg); 
+		-moz-transform: rotate(360deg); -
+		o-transform: rotate(360deg); 
+		-ms-transform: rotate(360deg); 
+	}
+
+	/*===========背景图输入判断=========*/ 
+	#veditor:focus {
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s; 
+	}
+
+	/*==========修改评论框样式===========start====*/ 
+	.v .vwrap {
+		padding: 0 0 20px; 
+	} 
+	/*内容框高度*/ 
+	.v .veditor {
+		min-height: 7rem;
+		resize: none; 
+	} 
+	/*==========修改评论框样式===========end======*/
+	/*头部空白栏高度*/
+	.valine-card .card-content {
+		padding: 20px 20px 5px 20px;
+	}
+
+	/* valine 评论框增加背景图片 */ 
+	#vcomments textarea {
+		/*背景图贴边*/ 
+		margin-top: -30px;
+		box-sizing: border-box;
+		background: url("https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp") 100% 100% no-repeat; 
+		}
+
+	// 点击回复直接评论 
+	$(document).ready(function () {
+		$('.vemoji-btn').text('😀');
+		$("#vcomments").on('click', 'span.vat', function () {
+			$(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap")); 
+			$('textarea#veditor').focus(); 
+			}) 
+		});
+	
+	// 自定义邮箱审核规则 
+	document.body.addEventListener('click', function (e) {
+	if (e.target.classList.contains('vsubmit')) {
+		const email = document.querySelector('input[type=email]'); 
+		const nick = document.querySelector('input[name=nick]'); 
+		const reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/; 
+		if (!email.value || !nick.value || !reg.test(email.value)) {
+			const str = `<div class="valert text-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`; 
+			const vmark = document.querySelector('.vmark'); 
+			vmark.innerHTML = str;
+			vmark.style.display = 'block'; 
+			setTimeout(function () {
+				vmark.style.display = 'none';
+				vmark.innerHTML = '';
+				}, 2500); 
+			} 
+		} 
+	})
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/valine/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'q5dBvJ3EjXVfkodLopW8PaPX-gzGzoHsz',
+        appKey: '90pOvkVnvVF3VVAD7PU3cc8y',
+        serverURLs: '',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'ヾﾉ≧∀≦)o来啊！,快活啊!'
+    });
+</script>
+
+<!--酷Q推送-->
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/41895.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="双系统下Linux（ubuntu）不能进入windows的NTFS分区之挂载错误问题解决">
+                        
+                        <span class="card-title">双系统下Linux（ubuntu）不能进入windows的NTFS分区之挂载错误问题解决</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Linux/" class="post-category">
+                                    Linux
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/ntfs-%E5%8F%8C%E7%B3%BB%E7%BB%9F%E4%B8%8Blinux/">
+                        <span class="chip bg-color">ntfs,双系统下linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/14911.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/medias/featureimages/22.jpg" class="responsive-img" alt="解决远程连接mysql很慢的方法">
+                        
+                        <span class="card-title">解决远程连接mysql很慢的方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-06-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Database/" class="post-category">
+                                    Database
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/mysql-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5mysql/">
+                        <span class="chip bg-color">mysql,远程连接mysql</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 三月天博客 | Sanyuetian`s Blog<br />'
+            + '文章作者: 三月天<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2022</span>
+            
+            <a href="/about" target="_blank">三月天</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/zwchn/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">32.9k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <!--<script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2022";
+                        var startMonth = "5";
+                        var startDate = "20";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>-->
+				<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2022, 04, 16, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/zwchn" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:488859798@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=488859798" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 488859798" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+    <a href="https://weibo.com/zwwb1109" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/zwwb1109" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
+    </a>
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/others/star.js"><\/script>');
+            }
+        </script>
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/zwchn/zwchn.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
